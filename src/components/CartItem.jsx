@@ -7,9 +7,8 @@ import { useShoppingCart } from "../context/ShoppingCartContext";
 export default function CartItem({ id, quantity }) {
   const { removeItemFromCart } = useShoppingCart();
   const item = storeItems.find((i) => i.id === id);
-  if (item == null) {
-    return null;
-  }
+  if (item == null) return null;
+
   return (
     <Stack
       direction="horizontal"

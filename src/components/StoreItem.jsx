@@ -19,11 +19,11 @@ function StoreItem({ id, price, name, imgUrl }) {
         style={{ width: "100%", height: "200px", objectFit: "cover" }}
       />
       <Card.Body>
-        <Card.Title className="d-flex justify-content-between align-items-baseline">
+        <Card.Title className="d-flex justify-content-between align-items-baseline mb-4">
           <span className="fs-2">{name}</span>
           <span className="text-muted me-2 ">{formatCurrency(price)} </span>
         </Card.Title>
-        <div className="m-auto">
+        <div className="mt-auto">
           {quantity === 0 ? (
             <Button className="w-100" onClick={() => increaseCartQuantity(id)}>
               Add To Cart

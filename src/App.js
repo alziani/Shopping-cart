@@ -1,10 +1,10 @@
 import "./App.css";
+import Navbar from "./context/ShoppingCartContext";
 import { Container } from "react-bootstrap";
 import { Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Store from "./components/Store";
 import About from "./components/About";
-import Navbar from "./context/ShoppingCartContext";
 import ShoppingCartProvider from "./context/ShoppingCartContext";
 function App() {
   return (

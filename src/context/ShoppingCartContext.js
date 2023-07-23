@@ -33,7 +33,7 @@ const ShoppingCartProvider = ({ children }) => {
       } else {
         return curr.map((item) => {
           if (item.id === id) {
-            return { item, quantity: item.quantity + 1 };
+            return { ...item, quantity: item.quantity + 1 };
           } else {
             return item;
           }
@@ -43,12 +43,12 @@ const ShoppingCartProvider = ({ children }) => {
   };
   const decreaseCartQuantity = (id) => {
     setCartItems((curr) => {
-      if (curr.find((item) => item.id === id) == null) {
+      if (curr.find((item) => item.id === id)?.quantity === 1) {
         return curr.filter((item) => item.id !== id);
       } else {
         return curr.map((item) => {
           if (item.id === id) {
-            return { item, quantity: item.quantity - 1 };
+            return { ...item, quantity: item.quantity - 1 };
           } else {
             return item;
           }
