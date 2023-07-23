@@ -3,7 +3,7 @@ import { Container, Navbar as NavbarBs, Nav, Button } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 function Navbar() {
-  const { openCart } = useShoppingCart();
+  const { openCart, cartQuantity } = useShoppingCart();
   return (
     <NavbarBs sticky="top" className="bg-white shadow-sm mb-3 ">
       <Container>
@@ -43,7 +43,7 @@ function Navbar() {
               transform: "translate(50% ,25%)",
             }}
           >
-            15500
+            {cartQuantity}
           </div>
         </Button>
       </Container>
