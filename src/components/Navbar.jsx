@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 function Navbar() {
   const { openCart, cartQuantity } = useShoppingCart();
+
   return (
     <NavbarBs sticky="top" className="bg-white shadow-sm mb-3 ">
       <Container>
@@ -18,7 +19,8 @@ function Navbar() {
             About
           </Nav.Link>
         </Nav>
-        {cartQuantity > 0 && (
+
+        {cartQuantity >= 0 && (
           <Button
             style={{ width: "3rem", height: "3rem", position: "relative" }}
             variant="outline-primary"
@@ -35,7 +37,7 @@ function Navbar() {
             <div
               className="rounded-circle bg-danger d-flex align-item-center justify-content-center "
               style={{
-                position: "absolut",
+                position: "absolute",
                 color: "white",
                 width: "1.5rem",
                 height: "1.5rem",
